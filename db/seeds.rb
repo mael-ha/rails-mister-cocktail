@@ -22,9 +22,19 @@ puts "... SEEDS Ingredient OK"
 
 #create cocktails
 puts "... SEEDS : Cocktails -----------"
-Cocktail.create(name: "Spicy Mateo", image: "bd149by2gjchupuo3nqs")
-Cocktail.create(name: "Thomartini", image: "lfezlxjbort8hq0onxmc")
-Cocktail.create(name: "Adrien Fashion", image: "tco7fjx3narqwnduacnk")
+file1 = URI.open('https://res.cloudinary.com/maelus/image/upload/v1591352730/tco7fjx3narqwnduacnk.jpg')
+file2 = URI.open('https://res.cloudinary.com/maelus/image/upload/v1591352725/bd149by2gjchupuo3nqs.jpg')
+file3 = URI.open('https://res.cloudinary.com/maelus/image/upload/v1591352715/lfezlxjbort8hq0onxmc.jpg')
+cocktail1 = Cocktail.new(name: "Spicy Mateo")
+cocktail2 = Cocktail.new(name: "Thomartini")
+cocktail3 = Cocktail.new(name: "Adrien Fashion")
+cocktail1.image.attach(io: file1, filename: 'cocktail1.jpg', content_type: 'image/jpg')
+cocktail2.image.attach(io: file2, filename: 'cocktail2.jpg', content_type: 'image/jpg')
+cocktail3.image.attach(io: file3, filename: 'cocktail3.jpg', content_type: 'image/jpg')
+cocktail1.save
+cocktail2.save
+cocktail3.save
+
 puts "... SEEDS Cocktails OK"
 
 #Create doses

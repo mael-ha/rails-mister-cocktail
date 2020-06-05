@@ -1,6 +1,8 @@
-<h1>Cocktails#new</h1>
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
-
+<div class="container form cocktail">
+  <h1>Cocktails#new</h1>
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :image, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>

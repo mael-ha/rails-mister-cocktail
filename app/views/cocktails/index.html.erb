@@ -5,11 +5,20 @@
   <% x = 1 %>
   <% @cocktails.each do |cocktail| %>
     <div class="card" style="width: 18rem;">
-      <%= cl_image_tag(cocktail.image,crop: :fill, class: "cocktail-image") %>
+      <%= cl_image_tag(cocktail.image.key,crop: :fill, class: "cocktail-image") %>
       <div class="card-body">
         <h5 class="card-title"><%= cocktail.name %></h5>
-        <p class="card-text">TODO: list of ingredients</p>
+        <!-- <p class="card-text">
+          Ingredients:
+          <ul> -->
+          <%# cocktail.doses.first(3).each do |dose| %>
+           <!-- <li><%#= Ingredient.find(dose.ingredient_id).name %></li> -->
+          <%# end %>
+          <!-- <li>...</li>
+          </ul>
+        </p> -->
         <%= link_to "Recipe", cocktail_path(cocktail), class: "btn btn-primary" %>
+        <%= link_to "Delete", cocktail_path(cocktail), method: :delete, class: "btn btn-danger" %>
       </div>
     </div>
     <% x += 1 %>
@@ -19,7 +28,7 @@
 
 <br>
 <p>
- <%= link_to "Add a cocktail", new_cocktail_path  %>
+ <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary"  %>
 </p>
 
 

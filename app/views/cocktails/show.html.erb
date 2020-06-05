@@ -1,15 +1,15 @@
-<h1><%= @cocktail.name %> recipe</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="container">
+  <h1><%= @cocktail.name %> recipe</h1>
+  <% @doses.each do |dose| %>
+  <p>
+    <%= "#{dose.ingredient.name} - #{dose.description}" %> (
+    <%= link_to "Edit", edit_dose_path(dose)  %> |
+    <%= link_to "Delete", dose_path(dose), method: :delete  %> )
+  </p>
+  <% end %>
 
-<% @doses.each do |dose| %>
-<p>
-  <%= "#{dose.ingredient.name} - #{dose.description}" %> (
-  <%= link_to "Edit", edit_dose_path(dose)  %> |
-  <%= link_to "Delete", dose_path(dose), method: :delete  %> )
-</p>
-<% end %>
-
-<p>
-  <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail)  %> |
-  <%= link_to "Back to cocktail list", cocktails_path  %>
-</p>
+  <p>
+    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail)  %> |
+    <%= link_to "Back to cocktail list", cocktails_path  %>
+  </p>
+</div>
