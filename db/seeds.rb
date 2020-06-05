@@ -22,9 +22,9 @@ puts "... SEEDS Ingredient OK"
 
 #create cocktails
 puts "... SEEDS : Cocktails -----------"
-Cocktail.create(name: "Spicy Mateo")
-Cocktail.create(name: "Thomartini")
-Cocktail.create(name: "Adrien Fashion")
+Cocktail.create(name: "Spicy Mateo", image: "bd149by2gjchupuo3nqs")
+Cocktail.create(name: "Thomartini", image: "lfezlxjbort8hq0onxmc")
+Cocktail.create(name: "Adrien Fashion", image: "tco7fjx3narqwnduacnk")
 puts "... SEEDS Cocktails OK"
 
 #Create doses
