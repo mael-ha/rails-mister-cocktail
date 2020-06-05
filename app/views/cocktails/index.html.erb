@@ -1,0 +1,24 @@
+<h1>List of cocktails</h1>
+
+<div class="container row">
+  <div class="d-flex">
+  <% x = 1 %>
+  <% @cocktails.each do |cocktail| %>
+    <div class="card" style="width: 18rem;">
+      <%= image_tag "https://picsum.photos/200/300?q=#{x}", alt: "#{cocktail.name}" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= cocktail.name %></h5>
+        <p class="card-text">TODO: list of ingredients</p>
+        <%= link_to "Recipe", cocktail_path(cocktail), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% x += 1 %>
+  <% end %>
+  </div>
+</div><
+
+<br>
+<p>
+ <%= link_to "Add a cocktail", new_cocktail_path  %>
+</p>
+
